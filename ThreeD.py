@@ -35,8 +35,8 @@ class Window(QMainWindow):
 	curr_time = None
 	timer = None
 
-	subs = 1 
-	divs = 1 
+	subs = 12 
+	divs = 12 
 
 	RX,RY,RZ = False,False,False
 	pic, poly, smallPoly, centroid, centroids =  False, True, False, False, False
