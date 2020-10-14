@@ -108,14 +108,15 @@ class Window(QMainWindow):
 		timer = QTimer(self)
 		timer.timeout.connect(self.showTime)
 		timer.start(self.tick) # update every second
-
+		
+		# you need to add images
 		self.Pixmap = [
-		QPixmap("img/m11.png"),
-		QPixmap("img/m12.png"),
-		QPixmap("img/img2.png"),
-		QPixmap("img/img1.png"),
-		QPixmap("img/m14.png"),
-		QPixmap("img/m15.png")
+		QPixmap("img.png"),
+		QPixmap("img.png"),
+		QPixmap("img.png"),
+		QPixmap("img.png"),
+		QPixmap("img.png"),
+		QPixmap("img.png")
 		]
 
 
@@ -243,7 +244,7 @@ class Window(QMainWindow):
 						path.lineTo (x2, y2)
 						path.lineTo (x0, y0)
 						painter.setClipPath(path)		
-						re = ThreeD_Warp2.Tform(x0, y0, x1, y1, x2, y2, sx0, sy0, sx1, sy1, sx2, sy2)
+						re = ThreeD_Warp.Tform(x0, y0, x1, y1, x2, y2, sx0, sy0, sx1, sy1, sx2, sy2)
 						transform = QTransform(re[0], re[1], re[2], re[3], re[4], re[5])
 						painter.setTransform(transform)
 						painter.drawPixmap(0, 0, tr['pix'])
@@ -336,7 +337,7 @@ class Window(QMainWindow):
 		]
 
 		for i in range(len(nv)):
-			self.triangles.append(ThreeD_Warp2.calculateGeometry(self.subs, self.divs, self.Pixmap[i], nv[i]))
+			self.triangles.append(ThreeD_Warp.calculateGeometry(self.subs, self.divs, self.Pixmap[i], nv[i]))
 		self.draw_order = []
 		self.triangles = sorted(self.triangles, key = lambda i: i['cz'],reverse=False)
 		self.image.fill(Qt.gray)
@@ -352,7 +353,6 @@ class Window(QMainWindow):
 			vec[i]=PointConverter.rotateAxisZ(vec[i], self.cp, rotation.z())
 	
 
-
 # main method 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)
@@ -360,4 +360,5 @@ if __name__ == "__main__":
 	window.show()   
 	# looping for window
 	sys.exit(app.exec())
+
 
