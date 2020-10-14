@@ -124,7 +124,7 @@ class Window(QMainWindow):
 		cmenu = QMenu(self)
 		rotatexAct = cmenu.addAction("Rotate X")
 		rotateyAct = cmenu.addAction("Rotate Y")
-		rotatezAct = cmenu.addAction("Rotate Y")
+		rotatezAct = cmenu.addAction("Rotate Z")
 		picAct = cmenu.addAction("Image")
 		poly_LAct = cmenu.addAction("Larg Poly")
 		poly_SAct = cmenu.addAction("Small Poly")
