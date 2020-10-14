@@ -5,7 +5,6 @@ import numpy as np
 import sys 
 import ThreeD_PointConverter as PointConverter
 import ThreeD_Warp
-import ThreeD_Warp2
 class Window(QMainWindow):
 	cw, ch = 1000, 700
 	rotX, rotY, rotZ = 0, 0, 0
