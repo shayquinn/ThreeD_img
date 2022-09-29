@@ -4,7 +4,6 @@ from PyQt5.QtCore import *
 import math
 from operator import itemgetter
 
-#https://www.youtube.com/watch?v=KA6rJZOfTTQ&ab_channel=MeanRollerCoding
 scale = 0.5
 perspective = 1400
 
@@ -14,8 +13,8 @@ def convertPoint(vec, sw, sh):
 	y3d = vec.z() * scale
 	depth = vec.x() * scale
 	newVal = setScale(x3d, y3d, depth)
-	x2d = sw / 2 + newVal[0]
-	y2d = sh / 2 - newVal[1]
+	x2d = int(sw / 2 + newVal[0])
+	y2d = int(sh / 2 - newVal[1])
 	return QPoint(x2d, y2d);
 
 def convertPoints(vec, sw, sh):
@@ -26,8 +25,8 @@ def convertPoints(vec, sw, sh):
 		y3d = vec[i].z() * scale
 		depth = vec[i].x() * scale
 		newVal = setScale(x3d, y3d, depth)
-		x2d = sw / 2 + newVal[0]
-		y2d = sh / 2 - newVal[1]
+		x2d = int(sw / 2 + newVal[0])
+		y2d = int(sh / 2 - newVal[1])
 		pp2d.append(QPoint(x2d, y2d))
 	return pp2d;
 
@@ -37,10 +36,10 @@ def convertPoints3D(vec, sw, sh):
 	for i in range(len(vec)):
 		x3d = vec[i].y() * scale
 		y3d = vec[i].z() * scale
-		depth = vec[i].x() * scale
+		depth = int(vec[i].x() * scale)
 		newVal = setScale(x3d, y3d, depth)
-		x2d = sw / 2 + newVal[0]
-		y2d = sh / 2 - newVal[1]
+		x2d = int(sw / 2 + newVal[0])
+		y2d = int(sh / 2 - newVal[1])
 		pp2d.append(QVector3D(x2d, y2d, depth))
 	return pp2d;
 
