@@ -94,13 +94,13 @@ def calculateGeometry(subs, divs, Pixmap, vec):
 			v2 = v2 if v2 else 0
 
 			triangle1 = {
-			't':[QPoint(p1x, p1y), QPoint(p3x, p3y), QPoint(p4x, p4y)], 
-			'tx':[QPoint(u1, v1),QPoint(u2, v2),QPoint(u1, v2)]
+			't':[QPoint(int(p1x), int(p1y)), QPoint(int(p3x), int(p3y)), QPoint(int(p4x), int(p4y))], 
+			'tx':[QPoint(int(u1), int(v1)),QPoint(int(u2), int(v2)),QPoint(int(u1), int(v2))]
 			}
 
 			triangle2 = {
-			't':[QPoint(p1x, p1y), QPoint(p2x, p2y), QPoint(p3x, p3y)], 
-			'tx':[QPoint(u1, v1),QPoint(u2, v1),QPoint(u2, v2)]
+			't':[QPoint(int(p1x), int(p1y)), QPoint(int(p2x), int(p2y)), QPoint(int(p3x), int(p3y))], 
+			'tx':[QPoint(int(u1), int(v1)),QPoint(int(u2), int(v1)),QPoint(int(u2), int(v2))]
 			}
 
 			if div<divdiv:
